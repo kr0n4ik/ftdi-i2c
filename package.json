@@ -1,0 +1,25 @@
+{
+  "name": "ftdi-i2c",
+  "version": "1.0.0",
+  "description": "Ftdi i2c library for node.js ",
+  "keywords": [
+    "ftdi",
+    "usb",
+    "i2c",
+    "electron"
+  ],
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kr0n4ik/ftdi-i2c.git"
+  },
+  "author": "kr0n4ik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kr0n4ik/ftdi-i2c/issues"
+  },
+  "homepage": "https://github.com/kr0n4ik/ftdi-i2c#readme"
+}
