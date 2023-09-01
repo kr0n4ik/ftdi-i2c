@@ -1,3 +1,5 @@
+const FTDI = require('ftdi-d2xx')
+
 const SDA_LO_SCL_LO = 0x00
 const SDA_IN_SCL_IN = 0x00
 const SDA_IN_SCL_OUT = 0x01
