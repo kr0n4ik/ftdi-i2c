@@ -1,16 +1,5 @@
 # I2C library for Node.js
 
-## Features
-- Asynchronous, non-blocking functions (use [`Promises`](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises) or [`async/await`](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises#async_and_await))
-- Pre-compiled for Windows / macOS / Linux
-- Compatible with [Electron](https://www.electronjs.org/) (see [the note](#note-to-electron-users) below)
-- Includes static FTDI Driver vendor libraries
-- Written in pure C language using [Node-API](https://nodejs.org/api/n-api.html#node-api)
-- Detailed error messages and codes are thrown without crashing Node.js
-- Includes TypeScript typings for auto-completion and validation
-- Compiled with [CMake.js](https://github.com/cmake-js/cmake-js) (no `gyp` / no Python required)
-
-
 ## Installation
 ###### In your Node.js project folder, run:
 ```bash
@@ -20,7 +9,6 @@ npm install ftdi-i2c
 ```js
 const I2C = require("ftdi-i2c")
 ```
-
 
 ## Quick example
 ```js
