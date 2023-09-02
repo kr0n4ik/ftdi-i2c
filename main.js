@@ -20,7 +20,7 @@ class I2C {
     /**
      * проверка количества байт приема и чтение
      * @param {int} count - количество байт према
-     * @returns buffer - принятые байты
+     * @returns {buffer} - принятые байты
      */
     async read(count) {
         for (let i = 0; i < 1000000; i++) {
@@ -82,7 +82,7 @@ class I2C {
     /**
      * соеденение с чипом и настройка работы по шине i2c
      * @param {byte} addr адрес i2c устройства
-     * @returns boolean при успешном соеденении вернет true
+     * @returns {boolean} при успешном соеденении вернет true
      */
     async open(addr) {
         if (this.#device) {
@@ -125,7 +125,7 @@ class I2C {
 
     /**
      * отсоедение от чипа
-     * @returns boolean при успешном отсоедение вернет true
+     * @returns {boolean} при успешном отсоедение вернет true
      */
     close() {
         if (this.#device) {
