@@ -85,14 +85,12 @@ class I2C {
         await this.#device.write(Uint8Array.from([0xAA]))
         let response = await this.read(2)
         if (response[0] != 0xFA || response[1] != 0xAA) {
-            console.log("Нет синхранизации с MPPSE")
             this.close()
             return false
         }
         await this.#device.write(Uint8Array.from([0xAB]))
         response = await this.read(2)
         if (response[0] != 0xFA || response[1] != 0xAB) {
-            console.log("Нет синхранизации с MPPSE")
             this.close()
             return false
         }
@@ -100,7 +98,6 @@ class I2C {
         await this.#device.write(Uint8Array.from([0x80, 0x03, 0x13, 0x86, (this.#clock_divider & 0xFF), ((this.#clock_divider >> 8) & 0xFF)]))
         await this.#device.write(Uint8Array.from([0x85]))
         this.#addr = addr
-        console.log("Синхранизации с MPPSE")
         return true
     }
 
@@ -194,7 +191,6 @@ class I2C {
         await this.#device.write(Uint8Array.from(this.#buf))
         const result = await this.read(3)
         if ((result[0] & 1) != 0 || (result[1] & 1) != 0 || (result[2] & 1) != 0) {
-            console.log(result)
             return false
         }
         return true
