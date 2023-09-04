@@ -6,9 +6,9 @@ const SDA_IN_SCL_IN = 0x00
 const SDA_IN_SCL_OUT = 0x01
 const SDA_OUT_SCL_IN = 0x02
 const SDA_OUT_SCL_OUT = 0x03
-const MSB_RISING_EDGE_CLOCK_BYTE_IN = 0x20;
-const MSB_FALLING_EDGE_CLOCK_BYTE_OUT = 0x11;
-const MSB_RISING_EDGE_CLOCK_BIT_IN = 0x22;
+const MSB_RISING_EDGE_CLOCK_BYTE_IN = 0x20
+const MSB_FALLING_EDGE_CLOCK_BYTE_OUT = 0x11
+const MSB_RISING_EDGE_CLOCK_BIT_IN = 0x22
 const MSB_FALLING_EDGE_CLOCK_BIT_OUT = 0x13
 
 class I2C {
@@ -18,9 +18,9 @@ class I2C {
     #buf = []
 
     /**
-     * проверка количества байт приема и чтение
-     * @param {int} count - количество байт према
-     * @returns {buffer} - принятые байты
+     * проверка количества байт приема и чтения
+     * @param {int} count количество байт для чтения
+     * @returns {buffer} принятые байты
      */
     async read(count) {
         for (let i = 0; i < 1000000; i++) {
@@ -82,7 +82,7 @@ class I2C {
     /**
      * соеденение с чипом и настройка работы по шине i2c
      * @param {byte} addr адрес i2c устройства
-     * @returns {boolean} при успешном соеденении вернет true
+     * @returns {boolean} при успешном соединении вернет true
      */
     async open(addr) {
         if (this.#device) {
@@ -100,14 +100,14 @@ class I2C {
         this.#device.setBitMode(0x00, FTDI.FT_BITMODE_RESET)
         // переход в режим MPSSE
         this.#device.setBitMode(0x00, FTDI.FT_BITMODE_MPSSE)
-        // отправка тестовго байта 0xAA
+        // отправка тестового байта 0xAA
         await this.#device.write(Uint8Array.from([0xAA]))
         let response = await this.read(2)
         if (response[0] != 0xFA || response[1] != 0xAA) {
             this.close()
             return false
         }
-        // отправка тестовго байта 0xAB
+        // отправка тестового байта 0xAB
         await this.#device.write(Uint8Array.from([0xAB]))
         response = await this.read(2)
         if (response[0] != 0xFA || response[1] != 0xAB) {
@@ -125,7 +125,7 @@ class I2C {
 
     /**
      * отсоедение от чипа
-     * @returns {boolean} при успешном отсоедение вернет true
+     * @returns {boolean} при успешном отсоединении вернет true
      */
     close() {
         if (this.#device) {
